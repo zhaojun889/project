@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }} - {{ task.deadline }} - {{ task.priority }}
+                {% if task.completed %}
+                    (Completed)
+                {% else %}
+                    <a href="/complete/{{ task.id }}">Complete</a>
+                {% endif %}
+                <a href="/edit/{{ task.id }}">Edit</a>
+                <a href="/delete/{{ task.id }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Create Task</h2>
+    <form action="/create" method="post">
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="date" name="deadline" required>
+        <select name="priority" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }} - {{ task.deadline }} - {{ task.priority }}
+                {% if task.completed %}
+                    (Completed)
+                {% else %}
+                    <a href="/complete/{{ task.id }}">Complete</a>
+                {% endif %}
+                <a href="/edit/{{ task.id }}">Edit</a>
+                <a href="/delete/{{ task.id }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Create Task</h2>
+    <form action="/create" method="post">
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="date" name="deadline" required>
+        <select name="priority" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>
